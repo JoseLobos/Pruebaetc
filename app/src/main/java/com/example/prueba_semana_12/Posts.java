@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 import com.example.prueba_semana_12.Interface.JsonPlaceHolderApi;
-import com.example.prueba_semana_12.Model.Posts;
 
 import java.util.List;
 
@@ -16,13 +15,13 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class MainActivity extends AppCompatActivity {
+public class Posts extends AppCompatActivity {
 
     private TextView mJsonTxtView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_posts);
 
         mJsonTxtView=findViewById(R.id.jsonText);
         getPosts();
@@ -35,17 +34,17 @@ public class MainActivity extends AppCompatActivity {
                 .build();
 
         JsonPlaceHolderApi jsonPlaceHolderApi = retrofit.create(JsonPlaceHolderApi.class);
-        Call<List<Posts>> call = jsonPlaceHolderApi.getPosts();
-        call.enqueue(new Callback<List<Posts>>() {
+        Call<List<com.example.prueba_semana_12.Model.Posts>> call = jsonPlaceHolderApi.getPosts();
+        call.enqueue(new Callback<List<com.example.prueba_semana_12.Model.Posts>>() {
             @Override
-            public void onResponse(Call<List<Posts>> call, Response<List<Posts>> response) {
+            public void onResponse(Call<List<com.example.prueba_semana_12.Model.Posts>> call, Response<List<com.example.prueba_semana_12.Model.Posts>> response) {
 
                 if(! response.isSuccessful()){
                     mJsonTxtView.setText("Codigo: "+response.code());
                     return;
             }
-                List<Posts> postsList = response.body();
-                for(Posts post: postsList){
+                List<com.example.prueba_semana_12.Model.Posts> postsList = response.body();
+                for(com.example.prueba_semana_12.Model.Posts post: postsList){
                     String content = "";
                     content += "userId:"+ post.getUserId() + "\n";
                     content += "id:"+ post.getId() + "\n";
@@ -58,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
 
 
             @Override
-            public void onFailure(Call<List<Posts>> call, Throwable t) {
+            public void onFailure(Call<List<com.example.prueba_semana_12.Model.Posts>> call, Throwable t) {
                 mJsonTxtView.setText(t.getMessage());
             }
         });
