@@ -53,7 +53,7 @@ public class Users extends AppCompatActivity {
                     content += "name:"+ users.getName() + "\n";
                     content += "username:" + users.getUsername() + "\n";
                     content += "email:" + users.getEmail() + "\n";
-                    content += "address:" + users.getAddress() + "\n";
+                    //content += "address:" + users.getAddress() + "\n";
                     content += "suite:" + users.getSuite() + "\n";
                     content += "city:" + users.getCity() + "\n";
 
@@ -63,7 +63,8 @@ public class Users extends AppCompatActivity {
                     content += "lng:" + users.getLng() + "\n";
                     content += "phone:" + users.getPhone() + "\n";
                     content += "website:" + users.getWebsite() + "\n";
-                    content += "company:" + users.getCompany() + "\n";
+                  //  content += "company:" + users.getCompany() + "\n";
+                    content += "name:" + users.getName() + "\n";
                     content += "catchPhrase:" + users.getCatchPhrase() + "\n";
                     content += "bs:" + users.getBs() + "\n\n";
                     mJsonTxtView.append(content);

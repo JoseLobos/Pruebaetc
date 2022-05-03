@@ -6,7 +6,7 @@ public class Users {
     private String name;
     private String username;
     private String email;
-    private String address;
+    //private String address;
     private String street;
     private String suite;
     private String city;
@@ -16,7 +16,7 @@ public class Users {
     private String lng;
     private String phone;
     private String website;
-    private String company;
+   // private String company;
 
     private String catchPhrase;
     private String bs;
@@ -26,21 +26,21 @@ public class Users {
         return  id;
     }
 
-    public String getUsername() {
-        return username;
-    }
-
     public String getName() {
         return name;
+    }
+
+    public String getUsername() {
+        return username;
     }
 
     public String getEmail() {
         return email;
     }
 
-    public String getAddress() {
-        return address;
-    }
+    //public String getAddress() {
+        //return address;
+//}
 
     public String getStreet() {
         return street;
@@ -76,9 +76,9 @@ public class Users {
         return website;
     }
 
-    public String getCompany() {
-        return company;
-    }
+   //public String getCompany() {
+        //return company;
+   //}
 
 
 
