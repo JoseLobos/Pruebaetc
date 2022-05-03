@@ -7,14 +7,17 @@ public class Users {
     private String username;
     private String email;
     private String address;
+    private String street;
     private String suite;
     private String city;
     private String zipcode;
     private String geo;
+    private String lat;
     private String lng;
     private String phone;
     private String website;
     private String company;
+
     private String catchPhrase;
     private String bs;
 
@@ -39,6 +42,10 @@ public class Users {
         return address;
     }
 
+    public String getStreet() {
+        return street;
+    }
+
     public String getSuite() {
         return suite;
     }
@@ -55,6 +62,10 @@ public class Users {
         return geo;
     }
 
+    public String getLat() {
+        return lat;
+    }
+
     public String getLng() {
         return lng;
     }
@@ -68,6 +79,8 @@ public class Users {
     public String getCompany() {
         return company;
     }
+
+
 
     public String getCatchPhrase() {
         return catchPhrase;

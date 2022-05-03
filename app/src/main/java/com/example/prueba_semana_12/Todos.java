@@ -1,8 +1,10 @@
 package com.example.prueba_semana_12;
 
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.prueba_semana_12.Interface.JsonPlaceHolderApi;
@@ -22,6 +24,7 @@ public class Todos extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_todos);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         mJsonTxtView=findViewById(R.id.jsonTextTodos);
         getTodos();
@@ -62,4 +65,14 @@ public class Todos extends AppCompatActivity {
             }
         });
 }
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()){
+            case android.R.id.home:
+                finish();
+                return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
 }

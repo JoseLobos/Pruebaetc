@@ -1,8 +1,10 @@
 package com.example.prueba_semana_12;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.widget.TextView;
 
 import com.example.prueba_semana_12.Interface.JsonPlaceHolderApi;
@@ -23,6 +25,7 @@ public class Posts extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_posts);
 
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         mJsonTxtView=findViewById(R.id.jsonText);
         getPosts();
     }
@@ -62,4 +65,14 @@ public class Posts extends AppCompatActivity {
             }
         });
 }
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()){
+            case android.R.id.home:
+                finish();
+                return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
 }
