@@ -1,11 +1,11 @@
 package com.example.prueba_semana_12.Model;
 
-public class Albums {
+public class Todos {
 
     private int userId;
     private int id;
     private String title;
-
+    private String completed;
 
     public int getUserId() {
         return userId;
@@ -19,6 +19,7 @@ public class Albums {
         return title;
     }
 
-
-
+    public String getCompleted() {
+        return completed;
+    }
 }

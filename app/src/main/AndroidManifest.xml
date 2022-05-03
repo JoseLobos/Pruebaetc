@@ -10,8 +10,28 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Prueba_semana_12">
+
+        <activity
+            android:name=".Posts"
+            android:exported="false" />
         <activity
             android:name=".Comments"
+            android:exported="false" />
+        <activity
+            android:name=".Albums"
+            android:exported="false" />
+        <activity
+            android:name=".Photos"
+            android:exported="false" />
+        <activity
+            android:name=".Todos"
+            android:exported="false" />
+        <activity
+            android:name=".Users"
+            android:exported="false" />
+
+        <activity
+            android:name=".Menu"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
